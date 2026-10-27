@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * 나루 디자인 토큰
+ * - 주색: 연보라(lavender) / 포인트: 연노랑(butter) / 그 외 모두 파스텔
+ * - 파스텔 배경 위 텍스트는 ink 계열만 사용 (대비 4.5:1 이상)
+ */
+@theme {
+  --color-cream: #fbf8ff;
+  --color-card: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-lavender-50: #f6f2ff;
+  --color-lavender-100: #ede5ff;
+  --color-lavender-200: #ddd0fb;
+  --color-lavender-300: #c9b6f2;
+  --color-lavender-400: #c3aef0;
+  --color-lavender-500: #b09ae4;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-butter-50: #fffcea;
+  --color-butter-100: #fff6c7;
+  --color-butter-200: #fff3b8;
+  --color-butter-300: #ffec9c;
+
+  --color-peach-100: #ffe6dc;
+  --color-mint-100: #dcf3ee;
+  --color-sky-100: #e1eaff;
+  --color-pink-100: #ffe3ef;
+
+  --color-ink: #4a4062;
+  /* 캐릭터 눈·입·아이콘 선 — 검정 대신 부드러운 라벤더 그레이 */
+  --color-line: #8a7aa8;
+  --color-ink-soft: #6d6487;
+
+  /* 감정색 (파스텔 보정) */
+  --color-emo-lethargy: #e4e1eb;
+  --color-emo-gloom: #cbd7f8;
+  --color-emo-anxiety: #e1d2f8;
+  --color-emo-anger: #fcd3c5;
+  --color-emo-joy: #fdedb3;
+  --color-emo-calm: #cbeee6;
+  --color-emo-confusion: #f5d9f3;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-display: var(--font-jua), "Pretendard Variable", sans-serif;
+
+  --radius-card: 24px;
+  --shadow-soft: 0 10px 30px -12px rgb(154 128 214 / 0.35);
+  --shadow-softer: 0 6px 18px -10px rgb(154 128 214 / 0.3);
+
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-wobble: wobble 0.9s ease-in-out infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-jiggle: jiggle 0.5s ease-in-out;
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes wobble {
+    0%, 100% { transform: rotate(-4deg) translateX(-2px); }
+    50% { transform: rotate(4deg) translateX(2px); }
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+  @keyframes jiggle {
+    0% { transform: rotate(0) scale(1); }
+    25% { transform: rotate(-6deg) scale(1.05); }
+    50% { transform: rotate(5deg) scale(1.05); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0) scale(1); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-lavender-500);
+    outline-offset: 3px;
+  }
+}
+
+/* 카드 뒤집기 */
+.flip-inner {
+  transition: transform 0.6s cubic-bezier(0.3, 0.7, 0.3, 1.2);
+  transform-style: preserve-3d;
+}
+.flip-inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* 대화 전 ↔ 후 루프 */
+.state-loop-a { animation: state-a 6s ease-in-out infinite; }
+.state-loop-b { animation: state-b 6s ease-in-out infinite; }
+@keyframes state-a {
+  0%, 40% { opacity: 1; }
+  50%, 90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes state-b {
+  0%, 40% { opacity: 0; }
+  50%, 90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .state-loop-a { opacity: 0; }
+  .state-loop-b { opacity: 1; }
 }

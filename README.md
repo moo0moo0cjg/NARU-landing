@@ -52,7 +52,7 @@ src/app/opengraph-image.tsx    ← OG 이미지 1200×630 자동 생성
 ## 캐릭터 이미지 교체
 
 실제 캐릭터 PNG를 `public/monsters/{key}.png` 에 넣고 `content.ts` 의 `monsters[].image` 에 경로를 적으면 SVG 대신 사용돼요.
-현재 공개 4종 — key: `lethargy`(무무) `gloom`(시울) `anger`(부아) `calm`(보라)
+현재 공개 4종 — key: `lethargy`(무무) `gloom`(시울) `anger`(부아) `calm`(보리)
 추후 추가용 SVG도 준비돼 있어요: `anxiety` `joy` `confusion` (content.ts 의 monsters 배열에 추가하면 노출)
 
 ## 분석 이벤트
@@ -62,7 +62,7 @@ src/app/opengraph-image.tsx    ← OG 이미지 1200×630 자동 생성
 
 ## 공개 전 확인할 TODO
 
-- [ ] 구글 폼 링크 연결 (`NEXT_PUBLIC_SURVEY_URL`)
+- [x] 구글 폼 링크 연결 (기본값: content.ts, `NEXT_PUBLIC_SURVEY_URL`로 덮어쓰기 가능)
 - [ ] `content.ts` — 설문 소요 시간(현재 "약 3분"), 인터뷰 시간·방식(현재 "30분 내외, 온라인")
 - [ ] `content.ts` — 인스타그램 URL, 문의 이메일, 사업자 정보
 - [ ] 카카오톡 공유 미리보기 확인 (배포 후 카카오 디버거로 캐시 초기화)

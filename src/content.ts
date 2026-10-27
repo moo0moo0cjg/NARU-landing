@@ -28,7 +28,7 @@ export const site = {
   instagram: "https://instagram.com/naru.app", // TODO: 실제 계정으로 교체
   contactEmail: "hello@naru.app", // TODO: 실제 문의 메일로 교체
   /** 구글 폼 링크 — 비워두면 버튼이 페이지 안의 설문 안내 섹션으로 이동해요 */
-  surveyUrl: process.env.NEXT_PUBLIC_SURVEY_URL ?? "", // TODO: 구글 폼 링크 연결
+  surveyUrl: process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/bonLoT8yjmCipJ1p7",
 };
 
 export const features = {
@@ -130,7 +130,7 @@ export const monsters: {
   {
     key: "calm",
     emotion: "평온",
-    name: "보라",
+    name: "보리",
     line: "지금 이 편안함, 천천히 느껴 봐.",
     style: "편안한 순간을 오래 기억하게 도와요",
   },

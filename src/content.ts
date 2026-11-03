@@ -6,13 +6,7 @@
  */
 
 export type EmotionKey =
-  | "lethargy"
-  | "gloom"
-  | "anxiety"
-  | "anger"
-  | "joy"
-  | "calm"
-  | "confusion";
+  "lethargy" | "gloom" | "anxiety" | "anger" | "joy" | "calm" | "confusion";
 
 /** 히어로 헤드라인 A/B — 여기서 바꾸면 바로 반영돼요. */
 export const HERO_VARIANT: "A" | "B" = "A";
@@ -24,11 +18,12 @@ export const site = {
   title: "나루 — 내 감정이 몬스터 친구가 되는 감정 기록 앱",
   description:
     "상담은 부담되고, 일기는 작심삼일이라면. 지금 기분을 고르면, 그 마음을 닮은 몬스터가 이야기를 들어줘요. 짧은 설문으로 나루를 함께 만들어 주세요.",
-  ogHeadline: "내 감정이\n친구가 되는 시간", // OG 이미지는 줄바꿈(\n) 위치를 직접 지정
+  ogHeadline: "오늘도,\n너의 마음과 함께.", // OG 이미지는 줄바꿈(\n) 위치를 직접 지정
   instagram: "https://instagram.com/naru.app", // TODO: 실제 계정으로 교체
   contactEmail: "hello@naru.app", // TODO: 실제 문의 메일로 교체
   /** 구글 폼 링크 — 비워두면 버튼이 페이지 안의 설문 안내 섹션으로 이동해요 */
-  surveyUrl: process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/bonLoT8yjmCipJ1p7",
+  surveyUrl:
+    process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/bonLoT8yjmCipJ1p7",
 };
 
 export const features = {
@@ -57,9 +52,15 @@ export const hero = {
 export const empathy = {
   headline: "이런 날, 있지 않나요?",
   cards: [
-    { icon: "bubble", text: "누구한테 말하긴 애매한데,\n혼자 삭이긴 버거운 날" },
+    {
+      icon: "bubble",
+      text: "누구한테 말하긴 애매한데,\n혼자 삭이긴 버거운 날",
+    },
     { icon: "phone", text: "일기 앱은 깔았는데…\n3일째부터 안 열게 되는 날" },
-    { icon: "tangle", text: "상담까지는 아닌 것 같은데,\n마음이 정리가 안 되는 날" },
+    {
+      icon: "tangle",
+      text: "상담까지는 아닌 것 같은데,\n마음이 정리가 안 되는 날",
+    },
   ] as const,
 };
 
@@ -70,11 +71,12 @@ export const how = {
     {
       title: "오늘의 감정 고르기",
       body: "감정 몬스터 중 지금 내 마음과 닮은 아이를 골라요.",
-      footnote: "지금 내 감정에 스스로 이름을 붙이는 것만으로도 마음이 조금 정리돼요.",
+      footnote:
+        "지금 내 감정에 스스로 이름을 붙이는 것만으로도 마음이 조금 정리돼요.",
     },
     {
       title: "몬스터와 이야기하기",
-      body: "몬스터가 들어주고, 공감하고, 때로는 같이 화내줘요. 충분하면 \"오늘은 이걸로 충분해\"를 눌러 주세요.",
+      body: '몬스터가 들어주고, 공감하고, 때로는 같이 화내줘요. 충분하면 "오늘은 이걸로 충분해"를 눌러 주세요.',
       // 채팅 예시는 친구처럼 반말
       chat: [
         { from: "monster", text: "뭐?? 걔가 진짜 그랬다고?? 내가 다 화나네!" },
@@ -158,9 +160,18 @@ export const featureSection = {
       body: "지난번에 털어놓은 이야기, 몬스터가 기억하고 먼저 물어봐요.",
       // 몬스터 말풍선은 친구처럼 반말
       bubbles: [
-        { monster: "gloom", text: "지난주에 말한 면접 어떻게 됐어? 계속 궁금했어!" },
-        { monster: "lethargy", text: "어제 잠 잘 못 잤다고 했잖아. 오늘은 좀 푹 잤어?" },
-        { monster: "calm", text: "저번에 말한 전시회 다녀왔어? 어땠는지 얘기해 줘!" },
+        {
+          monster: "gloom",
+          text: "지난주에 말한 면접 어떻게 됐어? 계속 궁금했어!",
+        },
+        {
+          monster: "lethargy",
+          text: "어제 잠 잘 못 잤다고 했잖아. 오늘은 좀 푹 잤어?",
+        },
+        {
+          monster: "calm",
+          text: "저번에 말한 전시회 다녀왔어? 어땠는지 얘기해 줘!",
+        },
       ],
     },
     {
@@ -175,12 +186,29 @@ export const promise = {
   eyebrow: "우리가 지키는 약속",
   headline: "오래 붙잡지 않을게요.\n하루 한 번이면 충분해요.",
   items: [
-    { icon: "lock", title: "나만 보는 기록", body: "감정 기록은 민감정보로 보호하고, 나만 볼 수 있어요." },
-    { icon: "bot", title: "AI 친구예요", body: "몬스터는 AI예요. 숨기지 않아요." },
-    { icon: "hands", title: "힘든 순간엔 함께 찾아요", body: "위기 신호가 보이면 전문 상담 기관을 안내해요." },
-    { icon: "timer", title: "과하게 쓰지 않게", body: "오래 쓰게 만드는 앱이 아니라, 마음이 편해지면 닫아도 되는 앱이에요." },
+    {
+      icon: "lock",
+      title: "나만 보는 기록",
+      body: "감정 기록은 민감정보로 보호하고, 나만 볼 수 있어요.",
+    },
+    {
+      icon: "bot",
+      title: "AI 친구예요",
+      body: "몬스터는 AI예요. 숨기지 않아요.",
+    },
+    {
+      icon: "hands",
+      title: "힘든 순간엔 함께 찾아요",
+      body: "위기 신호가 보이면 전문 상담 기관을 안내해요.",
+    },
+    {
+      icon: "timer",
+      title: "과하게 쓰지 않게",
+      body: "오래 쓰게 만드는 앱이 아니라, 마음이 편해지면 닫아도 되는 앱이에요.",
+    },
   ] as const,
-  disclaimer: "나루는 의료·상담 서비스가 아니며, 전문적인 진단이나 치료를 대신하지 않아요.",
+  disclaimer:
+    "나루는 의료·상담 서비스가 아니며, 전문적인 진단이나 치료를 대신하지 않아요.",
 };
 
 export const research = {
@@ -207,10 +235,19 @@ export const research = {
   interview: {
     title: "인터뷰 안내",
     items: [
-      { label: "누구에게", text: "설문에서 인터뷰 참여에 동의하고 연락처를 남겨 주신 분 중 일부" },
-      { label: "어떻게", text: "남겨 주신 연락처로 개별 연락 후, 원하시는 일정에 온라인(화상·전화)으로 진행해요" },
+      {
+        label: "누구에게",
+        text: "설문에서 인터뷰 참여에 동의하고 연락처를 남겨 주신 분 중 일부",
+      },
+      {
+        label: "어떻게",
+        text: "남겨 주신 연락처로 개별 연락 후, 원하시는 일정에 온라인(화상·전화)으로 진행해요",
+      },
       { label: "얼마나", text: "30분 내외" },
-      { label: "무엇을", text: "평소 감정을 다루는 방법, 기록 습관, 나루에 대한 첫인상 등을 여쭤봐요" },
+      {
+        label: "무엇을",
+        text: "평소 감정을 다루는 방법, 기록 습관, 나루에 대한 첫인상 등을 여쭤봐요",
+      },
     ],
     notes: [
       "연락을 받으셔도 참여 여부는 자유롭게 정하실 수 있어요.",
@@ -252,7 +289,8 @@ export const faq = {
 export const footer = {
   ctaHeadline: "나루를 함께\n만들어 주실래요?",
   cta: "설문 참여하기",
-  ctaSub: "짧은 설문 하나가 큰 힘이 돼요. 응답자 중 몇 분께는 인터뷰를 요청드릴 수 있어요.",
+  ctaSub:
+    "짧은 설문 하나가 큰 힘이 돼요. 응답자 중 몇 분께는 인터뷰를 요청드릴 수 있어요.",
   links: {
     instagram: "인스타그램",
     contact: "문의하기",
@@ -260,3 +298,39 @@ export const footer = {
   business: "사업자 정보는 11월 등록 후 업데이트될 예정이에요.", // TODO: 사업자 등록 후 교체
   copyright: "© 2026 Naru. All rights reserved.",
 };
+
+/** Autumn landing character identities, ordered to match the generated sprite atlas. */
+export const autumnFriends = [
+  {
+    name: "무무",
+    emotion: "무기력",
+    color: "#eee7dc",
+    line: "아무것도 안 해도 괜찮아. 오늘은 그냥 같이 쉬자.",
+    desc: "아무것도 하고 싶지 않은 날",
+    symbol: "조개껍질 속에서 꾸벅꾸벅 쉬는 걸 좋아해요",
+  },
+  {
+    name: "시울",
+    emotion: "우울 · 슬픔",
+    color: "#e4f0f8",
+    line: "말 안 해도 돼. 네 옆에 있을게.",
+    desc: "괜히 마음이 축 처지는 날",
+    symbol: "눈물 한 방울, 곁에는 동그란 물방울들",
+  },
+  {
+    name: "조아",
+    emotion: "혼란 · 불안",
+    color: "#eee7fa",
+    line: "어떤 마음인지 몰라도 괜찮아. 하나씩 같이 찾아보자.",
+    desc: "내 마음을 잘 모르겠는 날",
+    symbol: "불가사리를 꼭 안고 보랏빛 틈새에 쏙 숨어요",
+  },
+  {
+    name: "보리",
+    emotion: "평온",
+    color: "#e5f2e7",
+    line: "지금 이 편안함, 천천히 느껴 봐.",
+    desc: "작은 평온을 간직하고 싶은 날",
+    symbol: "클로버를 달고 친구들 사이를 사뿐사뿐 다녀요",
+  },
+];

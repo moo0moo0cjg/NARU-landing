@@ -315,7 +315,7 @@ export const autumnFriends = [
     color: "#e4f0f8",
     line: "말 안 해도 돼. 네 옆에 있을게.",
     desc: "괜히 마음이 축 처지는 날",
-    symbol: "눈물 한 방울, 곁에는 동그란 물방울들",
+    symbol: "눈물 한 방울, 곁에는 떠다니는 눈물 방울들",
   },
   {
     name: "조아",
@@ -323,7 +323,7 @@ export const autumnFriends = [
     color: "#eee7fa",
     line: "어떤 마음인지 몰라도 괜찮아. 하나씩 같이 찾아보자.",
     desc: "내 마음을 잘 모르겠는 날",
-    symbol: "불가사리를 꼭 안고 보랏빛 틈새에 쏙 숨어요",
+    symbol: "불가사리를 꼭 안고 보랏빛 산호 속에 쏙 숨어요",
   },
   {
     name: "보리",

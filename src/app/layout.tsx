@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: site.description,
   alternates: { canonical: new URL("/", site.url).href },
   verification: {
-    google: "RYOpMCVIdgJl_lIVegHxgilBAe5rOOjsqesoKmY28yA",
+    google: "IVFoJ6xRw2piSYYe8OD-7EE9LnWMuQ7RtnQtkFiuhnE",
     other: {
       "naver-site-verification": "a077cea69e00d14bbaf3c532c7055d0a04ee8dba",
     },

@@ -14,7 +14,7 @@ export const HERO_VARIANT: "A" | "B" = "A";
 export const site = {
   name: "나루",
   nameEn: "Naru",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://naru.example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://naru-landing-pi.vercel.app",
   title: "나루 — 내 감정이 몬스터 친구가 되는 감정 기록 앱",
   description:
     "상담은 부담되고, 일기는 작심삼일이라면. 지금 기분을 고르면, 그 마음을 닮은 몬스터가 이야기를 들어줘요. 짧은 설문으로 나루를 함께 만들어 주세요.",

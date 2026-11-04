@@ -28,10 +28,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: site.title,
   description: site.description,
+  alternates: { canonical: new URL("/", site.url).href },
+  verification: {
+    google: "RYOpMCVIdgJl_lIVegHxgilBAe5rOOjsqesoKmY28yA",
+    other: {
+      "naver-site-verification": "a077cea69e00d14bbaf3c532c7055d0a04ee8dba",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
     siteName: site.name,
+    url: new URL("/", site.url).href,
     title: site.title,
     description: site.description,
   },

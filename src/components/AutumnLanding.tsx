@@ -404,7 +404,7 @@ export function AutumnLanding() {
                   3분 설문 참여하기 <ArrowRight />
                 </SurveyLink>
                 <p className="cta-caption">
-                  구글 폼으로 연결돼요 · 인터뷰 참여는 선택이에요
+                  설문 페이지로 연결돼요 · 인터뷰 참여는 선택이에요
                 </p>
               </div>
               <div className="survey-friends">

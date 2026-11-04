@@ -21,9 +21,9 @@ export const site = {
   ogHeadline: "오늘도,\n너의 마음과 함께.", // OG 이미지는 줄바꿈(\n) 위치를 직접 지정
   instagram: "https://instagram.com/naru.app", // TODO: 실제 계정으로 교체
   contactEmail: "hello@naru.app", // TODO: 실제 문의 메일로 교체
-  /** 구글 폼 링크 — 비워두면 버튼이 페이지 안의 설문 안내 섹션으로 이동해요 */
+  /** 설문 링크 — 비워두면 버튼이 페이지 안의 설문 안내 섹션으로 이동해요 */
   surveyUrl:
-    process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/bonLoT8yjmCipJ1p7",
+    process.env.NEXT_PUBLIC_SURVEY_URL || "https://www.handyfit.kr/f/6c644901263948d9",
 };
 
 export const features = {
@@ -257,7 +257,7 @@ export const research = {
     ],
   },
   cta: "설문 참여하기",
-  ctaNote: "구글 폼으로 연결돼요",
+  ctaNote: "설문 페이지로 연결돼요",
 };
 
 export const faq = {

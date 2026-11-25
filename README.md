@@ -2,7 +2,7 @@
 
 Next.js 15 (App Router) + Tailwind CSS v4 · Vercel
 
-- 목적: **수요조사 설문(Handyfit) 참여 유도 + 응답자 중 일부에게 인터뷰 요청 안내**
+- 목적: **수요조사 설문(Google Forms) 참여 유도 + 응답자 중 일부에게 인터뷰 요청 안내**
 - 주색 **연보라**, 포인트 **연노랑**, 나머지 모두 파스텔 톤 (`src/app/globals.css` 의 `@theme` 토큰)
 - 헤드라인 폰트 Jua, 본문 Pretendard · 모바일(375px) 우선
 
@@ -19,7 +19,7 @@ npm run dev                  # http://localhost:3000
 
 ## 설문 연결
 
-`.env.local`(또는 Vercel 환경변수)에 `NEXT_PUBLIC_SURVEY_URL=https://www.handyfit.kr/f/6c644901263948d9` 를 넣으면 모든 "설문 참여하기" 버튼이 새 탭으로 설문 페이지를 열어요.
+`.env.local`(또는 Vercel 환경변수)에 `NEXT_PUBLIC_SURVEY_URL=https://forms.gle/95L9VVrq8nGoNX3G6` 를 넣으면 모든 "설문 참여하기" 버튼이 새 탭으로 설문 페이지를 열어요.
 비워두면 버튼은 페이지 안의 설문·인터뷰 안내 섹션(`#survey`)으로 이동해요.
 
 설문에 넣어 두면 좋은 항목:

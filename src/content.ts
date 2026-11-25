@@ -23,7 +23,7 @@ export const site = {
   contactEmail: "hello@naru.app", // TODO: 실제 문의 메일로 교체
   /** 설문 링크 — 비워두면 버튼이 페이지 안의 설문 안내 섹션으로 이동해요 */
   surveyUrl:
-    process.env.NEXT_PUBLIC_SURVEY_URL || "https://www.handyfit.kr/f/6c644901263948d9",
+    process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/95L9VVrq8nGoNX3G6",
 };
 
 export const features = {
